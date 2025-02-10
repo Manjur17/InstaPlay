@@ -26,9 +26,10 @@ const MovieDetails = ({ id }) => {
             setDetails(data);
         } catch (error) {
             toast.error(error.message);
+            navigate("/dashboard");
         }
     };
-    
+
     const handlePlayClick = async () => {
         try {
             const trailer = await fetchMovieTrailer(id);
