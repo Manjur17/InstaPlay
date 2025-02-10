@@ -69,7 +69,7 @@ const MovieDetails = ({ id }) => {
                     <div className="content">
                         <div className="movie-details-wrapper">
                             <h1 className="movie-title">{details.title}</h1>
-                            <p className="movie-rating">Rating: {ratingOutOf5}/5</p>
+                            <p className="movie-rating">Rating {ratingOutOf5}/5</p>
                             <p className="movie-overview">{details.overview}</p>
                             <div className="movie-meta">
                                 <p>Release Date    {details.release_date}</p>
