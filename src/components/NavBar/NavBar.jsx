@@ -34,6 +34,7 @@ const NavBar = ({ displaySearchBar }) => {
                 onClick={() => {
                     logout();
                     toast.success("Logout successful!", { autoClose: 2000 });
+                    setSerachText("");
                     navigate("/");
                 }}
             >Logout</button>

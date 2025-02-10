@@ -1,13 +1,10 @@
 import "./RenderStars.css";
-
-function convertRating(ratingOutOf10) {
-    let ratingOutOf5 = ratingOutOf10 / 2;
-
-    // Round to the nearest 0.5
-    return Math.round(ratingOutOf5 * 2) / 2;
-}
+import { convertRating } from "../../utils/convertRating";
+import { useSearch } from "../../context/SearchContext";
+import { useEffect } from "react";
 
 const RenderStars = ({ ratingOutOf10 }) => {
+
     const ratingOutOf5 = convertRating(ratingOutOf10); // Convert to out of 5
     const fullStars = Math.floor(ratingOutOf5); // Full stars
     const hasHalfStar = ratingOutOf5 % 1 !== 0; // Check for half star

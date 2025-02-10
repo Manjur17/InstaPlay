@@ -11,11 +11,14 @@ import RenderStars from "../RenderStars/RenderStars";
 import { useSearch } from "../../context/SearchContext";
 import MovieTitle from "../MovieTitle/MovieTitle";
 import { TRENDING_URL, SEARCH_URL } from "../apis/api";
-
+import { toast } from "react-toastify";
+import { convertRating } from "../../utils/convertRating";
 
 const Dashboard = () => {
     const [movies, setMovies] = useState([]);
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(() => {
+        return parseInt(sessionStorage.getItem("lastPage")) || 1; // Restore last page from sessionStorage
+    });
     const [totalPages, setTotalPages] = useState(1);
     const [loading, setLoading] = useState(false);
 
@@ -36,7 +39,7 @@ const Dashboard = () => {
             setMovies(response.data.results);
             setTotalPages(response.data.total_pages);
         } catch (error) {
-            console.error("Error fetching movies:", error);
+            toast.error("Error fetching movies!!");
         } finally {
             setLoading(false);
         }
@@ -46,8 +49,15 @@ const Dashboard = () => {
         setPage(data.selected + 1);
     };
 
-    const handleDetails = (id) => {
-        navigate(`/movie/${id}`);
+
+    const handleDetails = (movie) => {
+        sessionStorage.setItem("lastPage", page); //last visited page
+
+        navigate(`/movie/${movie.id}`, {
+            state: {
+                ratingOutOf5: convertRating(movie.vote_average),
+            }
+        });
     };
 
     return (
@@ -93,7 +103,7 @@ const Dashboard = () => {
                                         </div>
                                         <div
                                             className="play-btn-container"
-                                            onClick={() => handleDetails(movie.id)}
+                                            onClick={() => handleDetails(movie)}
                                         >
                                             <img src={play} alt="play" />
 

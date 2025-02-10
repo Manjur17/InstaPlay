@@ -104,16 +104,16 @@
     .signin-box {
         width: 100%;
         max-width: 380px;
-        padding: 24px; 
+        padding: 24px;
     }
 
     .title {
         font-size: 26px;
     }
 
-    .input-group{
+    .input-group {
         max-width: 550px;
-        padding-right: 0;   
+        padding-right: 0;
     }
 
     .input-field {
@@ -130,33 +130,39 @@
     } */
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 410px) {
     .signin-box {
-         width: 100%;
-        max-width: 380px; /* Slightly smaller box for small screens */
-        padding: 24px; 
+        width: 100%;
+        max-width: 380px;
+        /* Slightly smaller box for small screens */
+        padding: 24px;
     }
 
     .title {
         font-size: 24px;
     }
+    .input-group {
+        max-width: 550px;
+        padding-right: 20px;
+    }
 
     .input-field {
         width: 100%;
-        padding: 12px;
+        /* padding: 12px; */
+        /* padding-right: 80px; */
         font-size: 14px;
-        max-width: 530px;
     }
 
-    
+
     .login-button {
-        width: 100%;
+        width: 110%;
         font-size: 14px;
-        padding: 8px;
-        max-width: 220px;
+        /* padding: 8px; */
+        /* max-width: 25440px; */
 
     }
 }
+
 /* @media screen and (max-width: 450px) {
     .signin-box {
         width: 100%;

@@ -2,7 +2,7 @@
 import { ToastContainer } from 'react-toastify'
 import './App.css'
 import { AuthProvider } from './context/AuthContext'
-import MainRoutes from './routes/Routes'
+import MainRoutes from './routes/MainRoutes'
 import { SearchContextProvider } from './context/SearchContext'
 
 function App() {

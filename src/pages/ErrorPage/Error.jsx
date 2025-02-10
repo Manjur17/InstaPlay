@@ -1,6 +1,6 @@
 const ErrorPage = () => {
     return(
-        <>Error occurred</>
+        <>Error occurred. No page found</>
     )
 }
 

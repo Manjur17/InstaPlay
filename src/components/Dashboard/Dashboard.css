@@ -95,7 +95,7 @@
 .movie-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: start;
     gap: 20px;
 }
 
@@ -286,7 +286,6 @@ img.movie-poster-img {
     min-width: 32px;
     color: rgba(255, 255, 255, 0.60);
     font-family: "Helvetica Neue LT Pro", Helvetica, Arial, sans-serif;
-    ;
     font-size: 18px;
     font-style: normal;
     line-height: 24px;
