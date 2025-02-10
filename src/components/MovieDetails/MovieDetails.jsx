@@ -6,6 +6,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import { fetchMovieDetails } from "../../apis/fetchMovieDetails";
 import { fetchMovieTrailer } from "../../apis/fetchMovieTrailer";
+import close from "../../assets/close.svg";
 
 const MovieDetails = ({ id }) => {
     const [details, setDetails] = useState(null);
@@ -71,8 +72,8 @@ const MovieDetails = ({ id }) => {
                             <p className="movie-rating">Rating: {ratingOutOf5}/5</p>
                             <p className="movie-overview">{details.overview}</p>
                             <div className="movie-meta">
-                                <p>Release Date:{details.release_date}</p>
-                                <p>Original Language: {details.original_language.toUpperCase()}</p>
+                                <p>Release Date    {details.release_date}</p>
+                                <p>Original Language    {details.original_language.toUpperCase()}</p>
                             </div>
 
                         </div>
@@ -88,11 +89,11 @@ const MovieDetails = ({ id }) => {
             {showTrailer && trailerKey && (
                 <div className="trailer-modal">
                     <div className="modal-content">
-                        <span className="close-button" onClick={() => setShowTrailer(false)}>✖</span>
+                        <img className="close-button" src={close} alt="close" onClick={() => setShowTrailer(false)}/>
                         <iframe
                             width="800"
                             height="450"
-                            src={`https://www.youtube.com/embed/${trailerKey}`}
+                            src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1`}
                             title="Movie Trailer"
                             allowFullScreen
                         />
