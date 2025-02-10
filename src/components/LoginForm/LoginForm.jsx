@@ -68,7 +68,6 @@ export default function LoginForm() {
                 );
 
                 const data = await response.json();
-                console.log("Response:", data);
                 if (data.success) {
                     toast.success("Login successful!", { autoClose: 2000 });
                     login("dummyToken");

@@ -10,10 +10,8 @@ import { useNavigate } from "react-router-dom";
 import RenderStars from "../RenderStars/RenderStars";
 import { useSearch } from "../../context/SearchContext";
 import MovieTitle from "../MovieTitle/MovieTitle";
+import { TRENDING_URL, SEARCH_URL } from "../apis/api";
 
-const API_KEY = "d0605f7c77a7e9ffd22f6f77c12e0f8f";
-const TRENDING_URL = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
-const SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=`;
 
 const Dashboard = () => {
     const [movies, setMovies] = useState([]);
@@ -70,7 +68,6 @@ const Dashboard = () => {
                             : "Trending"}
                 </h2>
 
-                {/* Show Loader While Fetching */}
                 {loading ? (
                     <div className="loader-container">
                         <div className="loader"></div>
@@ -91,11 +88,6 @@ const Dashboard = () => {
 
                                     <div className="movie-details">
                                         <div className="movie-info">
-
-                                            {/* <div className="tooltip">
-                                                <h3>{movie.title}</h3>
-                                                <span className="tooltip-text">{movie.title}</span>
-                                            </div> */}
                                             <MovieTitle title={movie.title} />
                                             <RenderStars ratingOutOf10={movie.vote_average} />
                                         </div>
@@ -114,7 +106,6 @@ const Dashboard = () => {
                 )}
             </section>
 
-            {/* Pagination */}
             {totalPages > 1 && (
                 <div className="pagination-div">
                     <ReactPaginate

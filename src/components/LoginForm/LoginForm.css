@@ -26,7 +26,6 @@
     font-weight: 500;
     line-height: 36px;
     letter-spacing: 0.24px;
-    /* width: 350px; */
 }
 
 .subtitle {
@@ -57,7 +56,6 @@
     border-radius: 16px;
     font-size: 14px;
     outline: none;
-    transition: all 0.3s ease;
 }
 
 .input-field:focus {
@@ -97,13 +95,16 @@
     font-size: 12px;
     margin-top: 5px;
     position: absolute;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    left: 1%;
 }
 
 @media screen and (max-width: 750px) {
     .signin-box {
         width: 100%;
-        max-width: 380px; /* Slightly smaller box for small screens */
-        padding: 24px; /* Reduce padding */
+        max-width: 380px;
+        padding: 24px; 
     }
 
     .title {
@@ -111,7 +112,8 @@
     }
 
     .input-group{
-        max-width: 550px;   
+        max-width: 550px;
+        padding-right: 0;   
     }
 
     .input-field {
@@ -121,12 +123,11 @@
 
     }
 
-    .login-button {
+    /* .login-button {
         font-size: 14px;
-        /* padding: 10px; */
         max-width: 550px;
 
-    }
+    } */
 }
 
 @media screen and (max-width: 430px) {
@@ -156,10 +157,10 @@
 
     }
 }
-@media screen and (max-width: 450px) {
+/* @media screen and (max-width: 450px) {
     .signin-box {
         width: 100%;
-        max-width: 380px; /* Slightly smaller box for small screens */
+        max-width: 380px; 
         padding: 24px; 
     }
 
@@ -184,7 +185,7 @@
         max-width: 220px;
 
     }
-}
+} */
 
 
 /* .floating-label {

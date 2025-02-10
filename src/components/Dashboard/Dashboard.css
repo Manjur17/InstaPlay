@@ -228,7 +228,6 @@ img.movie-poster-img {
     animation: spin 1s linear infinite;
 }
 
-/* Loading Animation */
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -239,7 +238,6 @@ img.movie-poster-img {
     }
 }
 
-/* No Results Message */
 .no-results {
     text-align: center;
     color: white;

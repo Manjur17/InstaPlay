@@ -10,8 +10,8 @@ const MovieDetailsPage = () => {
     return (
         <div className="app-container">
             <NavBar displaySearchBar={false} />
-            <MovieDetail id={id}/>
-            {/* <MovieDetails id={id} /> */}
+            {/* <MovieDetail id={id}/> */}
+            <MovieDetails id={id} />
         </div>
     )
 }
