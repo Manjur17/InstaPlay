@@ -1,5 +1,5 @@
 import "./RenderStars.css";
-import { convertRating } from "../../utils/convertRating";
+import { convertRating } from "../../services/convertRating";
 import { useSearch } from "../../context/SearchContext";
 import { useEffect } from "react";
 

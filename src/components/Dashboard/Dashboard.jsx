@@ -12,12 +12,12 @@ import { useSearch } from "../../context/SearchContext";
 import MovieTitle from "../MovieTitle/MovieTitle";
 import { TRENDING_URL, SEARCH_URL } from "../apis/api";
 import { toast } from "react-toastify";
-import { convertRating } from "../../utils/convertRating";
+import { convertRating } from "../../services/convertRating";
 
 const Dashboard = () => {
     const [movies, setMovies] = useState([]);
     const [page, setPage] = useState(() => {
-        return parseInt(sessionStorage.getItem("lastPage")) || 1; // Restore last page from sessionStorage
+        return parseInt(sessionStorage.getItem("lastPage")) || 1;
     });
     const [totalPages, setTotalPages] = useState(1);
     const [loading, setLoading] = useState(false);
@@ -67,7 +67,6 @@ const Dashboard = () => {
             </div>
 
             <section className="trending-section">
-                {/* Dynamic Heading */}
                 <h2 className="trending">
                     {loading
                         ? "Loading..."

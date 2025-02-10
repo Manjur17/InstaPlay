@@ -3,7 +3,7 @@ import "./LoginForm.css";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAuth } from "../../context/AuthContext";
-
+import axios from "axios";
 
 export default function LoginForm() {
 
@@ -46,44 +46,45 @@ export default function LoginForm() {
         }
     };
 
+
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (!errors.name && !errors.password && formData.name && formData.password) {
             try {
                 setIsSubmitting(true);
-                const response = await fetch(
+
+                const response = await axios.post(
                     "https://api.themoviedb.org/3/authentication/token/validate_with_login?api_key=019085ae8fd360fcd800ae1d44592de2",
                     {
-                        method: "POST",
+                        request_token: "13ba8a472d61e38aac8378a0fff22940e77831ad",
+                        username: "deepakhegde",
+                        password: "6318",
+                    },
+                    {
                         headers: {
                             "Content-Type": "application/json",
                         },
-                        body: JSON.stringify({
-                            request_token: "13ba8a472d61e38aac8378a0fff22940e77831ad",
-                            username: "deepakhegde",
-                            password: "6318",
-                        }),
                     }
                 );
 
-                const data = await response.json();
-                if (data.success) {
+                if (response.data.success) {
                     toast.success("Login successful!", { autoClose: 2000 });
                     login("dummyToken");
                     navigate("/dashboard");
-
                 } else {
                     toast.error("Login failed. Please check your credentials.");
                 }
             } catch (error) {
                 toast.error("An error occurred. Please try again.");
+            } finally {
+                setIsSubmitting(false);
             }
         } else {
             toast.error("Please fix the errors before submitting.");
         }
-
-        setIsSubmitting(false);
     };
 
     const isButtonDisabled =

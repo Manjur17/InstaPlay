@@ -9,6 +9,9 @@ import { toast } from "react-toastify";
 
 const MovieDetails = ({ id }) => {
     const [details, setDetails] = useState(null);
+    const [trailerKey, setTrailerKey] = useState(null);
+    const [showTrailer, setShowTrailer] = useState(false);
+
     const navigate = useNavigate();
     const location = useLocation();
     const ratingOutOf5 = location.state?.ratingOutOf5;
@@ -26,6 +29,19 @@ const MovieDetails = ({ id }) => {
         }
     };
 
+    const fetchMovieTrailer = async () => {
+        try {
+            const response = await axios.get(`${API_URL}/${id}/videos?api_key=${API_KEY}&language=en-US`);
+            const videos = response.data.results;
+            const trailer = videos.find((video) => video.type === "Trailer" && video.site === "YouTube");
+            if (trailer) {
+                setTrailerKey(trailer.key);
+                setShowTrailer(true);
+            }
+        } catch (error) {
+            toast.error("Error fetching movie trailer:", error);
+        }
+    };
 
     return (
 
@@ -59,9 +75,26 @@ const MovieDetails = ({ id }) => {
                             </div>
 
                         </div>
-                        <div className="play-button">
+
+                        <div className="play-button" onClick={fetchMovieTrailer}>
                             <img src={play} alt="play" />
                         </div>
+
+                    </div>
+                </div>
+            )}
+
+            {showTrailer && trailerKey && (
+                <div className="trailer-modal">
+                    <div className="modal-content">
+                        <span className="close-button" onClick={() => setShowTrailer(false)}>✖</span>
+                        <iframe
+                            width="800"
+                            height="450"
+                            src={`https://www.youtube.com/embed/${trailerKey}`}
+                            title="Movie Trailer"
+                            allowFullScreen
+                        />
                     </div>
                 </div>
             )}

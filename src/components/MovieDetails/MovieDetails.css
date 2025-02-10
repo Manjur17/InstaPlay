@@ -18,16 +18,13 @@
 .backdrop-container {
     position: absolute;
     width: 100%;
-    height: -webkit-fill-available;
     overflow: hidden;
 }
 
-img.backdrop-image {
-
+.backdrop-image {
     width: 100%;
     object-fit: cover;
     position: fixed;
-    height: -webkit-fill-available;
     height: 100%;
     object-position: center;
 
@@ -130,19 +127,22 @@ img.backdrop-image {
 @media screen and (min-width:551px) {
     .content {
         max-width: 58%;
-
     }
+    
 }
 
 
 
 @media screen and (max-width:550px) {
     .play-button {
-        /* visibility: hidden; */
-        display: none;
+        visibility: hidden;
     }
 
-    img.backdrop-image {
+    .trailer-modal{
+        visibility: hidden;
+    }
+
+    .backdrop-image {
         position: static;
     }
 
@@ -178,5 +178,36 @@ img.backdrop-image {
     .movie-details-wrapper {
         width: 100%;
     }
+
+}
+
+
+
+
+/* Modal for Trailer */
+.trailer-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal-content {
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
 
 }

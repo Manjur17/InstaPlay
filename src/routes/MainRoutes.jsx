@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import SignInPage from '../pages/SignInPage/SignInPage';
 import { useAuth } from "../context/AuthContext";
-import ErrorPage from '../pages/ErrorPage/Error';
+import Pagenotfound from '../pages/Pagenotfound/Pagenotfound';
 import DashboardPage from '../pages/DashboardPage/DashboardPage';
 import ProtectedRoute from './ProtectedRoute';
 import MovieDetailsPage from '../pages/MovieDetailsPage/MovieDetailsPage';
@@ -33,7 +33,7 @@ function MainRoutes() {
                 }
             />
 
-            <Route path='*' element={<ErrorPage />} />
+            <Route path='*' element={<Pagenotfound />} />
         </Routes>
     )
 }
