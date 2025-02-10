@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import ReactPaginate from "react-paginate";
 import "./Dashboard.css";
 import photo from "../../assets/banner.png";
@@ -10,9 +9,9 @@ import { useNavigate } from "react-router-dom";
 import RenderStars from "../RenderStars/RenderStars";
 import { useSearch } from "../../context/SearchContext";
 import MovieTitle from "../MovieTitle/MovieTitle";
-import { TRENDING_URL, SEARCH_URL } from "../apis/api";
 import { toast } from "react-toastify";
-import { convertRating } from "../../services/convertRating";
+import { convertRating } from "../../utils/convertRating";
+import { fetchMovies } from "../../apis/fetchMovies";
 
 const Dashboard = () => {
     const [movies, setMovies] = useState([]);
@@ -26,25 +25,21 @@ const Dashboard = () => {
     const { query } = useSearch();
 
     useEffect(() => {
-        fetchMovies(page, query);
+        loadMovies(page, query);
     }, [page, query]);
 
-    const fetchMovies = async (page, query) => {
+    const loadMovies = async (page, query) => {
         try {
             setLoading(true);
-
-            const url = query ? `${SEARCH_URL}${query}&page=${page}&include_adult=false` : `${TRENDING_URL}&page=${page}`;
-            const response = await axios.get(url);
-
-            setMovies(response.data.results);
-            setTotalPages(response.data.total_pages);
+            const { movies, totalPages } = await fetchMovies(page, query);
+            setMovies(movies);
+            setTotalPages(totalPages);
         } catch (error) {
-            toast.error("Error fetching movies!!");
+            toast.error(error.message);
         } finally {
             setLoading(false);
         }
     };
-
     const handlePageClick = (data) => {
         setPage(data.selected + 1);
     };

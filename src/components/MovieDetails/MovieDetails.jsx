@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import "./MovieDetails.css";
 import play from "../../assets/play.svg";
 import backIcon from "../../assets/backIcon.svg";
 import { useNavigate, useLocation } from "react-router-dom";
-import { API_KEY, API_URL } from "../apis/api";
 import { toast } from "react-toastify";
+import { fetchMovieDetails } from "../../apis/fetchMovieDetails";
+import { fetchMovieTrailer } from "../../apis/fetchMovieTrailer";
 
 const MovieDetails = ({ id }) => {
     const [details, setDetails] = useState(null);
@@ -17,29 +17,29 @@ const MovieDetails = ({ id }) => {
     const ratingOutOf5 = location.state?.ratingOutOf5;
 
     useEffect(() => {
-        fetchMovieDetails();
+        loadMovieDetails();
     }, [id]);
 
-    const fetchMovieDetails = async () => {
+    const loadMovieDetails = async () => {
         try {
-            const response = await axios.get(`${API_URL}/${id}?api_key=${API_KEY}&language=en-US`);
-            setDetails(response.data);
+            const data = await fetchMovieDetails(id);
+            setDetails(data);
         } catch (error) {
-            toast.error("Error fetching movie details:", error);
+            toast.error(error.message);
         }
     };
-
-    const fetchMovieTrailer = async () => {
+    
+    const handlePlayClick = async () => {
         try {
-            const response = await axios.get(`${API_URL}/${id}/videos?api_key=${API_KEY}&language=en-US`);
-            const videos = response.data.results;
-            const trailer = videos.find((video) => video.type === "Trailer" && video.site === "YouTube");
+            const trailer = await fetchMovieTrailer(id);
             if (trailer) {
-                setTrailerKey(trailer.key);
+                setTrailerKey(trailer);
                 setShowTrailer(true);
+            } else {
+                toast.error("Trailer not available");
             }
         } catch (error) {
-            toast.error("Error fetching movie trailer:", error);
+            toast.error(error.message);
         }
     };
 
@@ -70,13 +70,13 @@ const MovieDetails = ({ id }) => {
                             <p className="movie-rating">Rating: {ratingOutOf5}/5</p>
                             <p className="movie-overview">{details.overview}</p>
                             <div className="movie-meta">
-                                <p><strong>Release Date:</strong> {details.release_date}</p>
-                                <p><strong>Original Language:</strong> {details.original_language.toUpperCase()}</p>
+                                <p>Release Date:{details.release_date}</p>
+                                <p>Original Language: {details.original_language.toUpperCase()}</p>
                             </div>
 
                         </div>
 
-                        <div className="play-button" onClick={fetchMovieTrailer}>
+                        <div className="play-button" onClick={handlePlayClick}>
                             <img src={play} alt="play" />
                         </div>
 

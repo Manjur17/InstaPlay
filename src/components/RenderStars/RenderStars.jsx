@@ -1,7 +1,5 @@
 import "./RenderStars.css";
-import { convertRating } from "../../services/convertRating";
-import { useSearch } from "../../context/SearchContext";
-import { useEffect } from "react";
+import { convertRating } from "../../utils/convertRating";
 
 const RenderStars = ({ ratingOutOf10 }) => {
 

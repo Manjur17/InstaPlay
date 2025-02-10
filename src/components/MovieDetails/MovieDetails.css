@@ -48,24 +48,42 @@
 
 
 .movie-title {
-    font-size: 3rem;
-    font-weight: bold;
-    /* margin-bottom: 15px; */
+    color: #FFF;
+    font-family: "Helvetica Neue LT Pro", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .movie-rating {
-    font-size: 1.2rem;
-    /* margin-bottom: 10px; */
+    color: #FFF;
+    font-family: "Helvetica Neue LT Pro", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 125% */
 }
 
 .movie-overview {
-    font-size: 1rem;
-    line-height: 1.5;
-    /* margin-bottom: 20px; */
+    color: rgba(255, 255, 255, 0.70);
+    font-family: "Helvetica Neue LT Pro", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 152%;
+    /* 24.32px */
 }
 
 .movie-meta p {
     margin: 5px 0;
+    color: #FFF;
+    font-family: "Helvetica Neue LT Pro", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 
@@ -124,11 +142,12 @@
     }
 }
 
+
 @media screen and (min-width:551px) {
     .content {
         max-width: 58%;
     }
-    
+
 }
 
 
@@ -138,7 +157,7 @@
         visibility: hidden;
     }
 
-    .trailer-modal{
+    .trailer-modal {
         visibility: hidden;
     }
 
