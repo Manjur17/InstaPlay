@@ -1,0 +1,35 @@
+.tooltip {
+    position: relative;
+    display: inline-block;
+    max-width: 95%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tooltip:hover {
+    overflow: visible;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #FFF;
+    font-family: Poppins;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    bottom: 120%;
+    left: 53%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}

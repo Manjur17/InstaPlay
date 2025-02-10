@@ -1,0 +1,41 @@
+
+
+.star-rating {
+    display: flex;
+    align-items: center;
+}
+
+.full-star {
+    color: gold;
+    font-size: 18px;
+    margin-right: 2px;
+}
+
+.half-star {
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    color: gray;
+    margin-right: 2px;
+}
+
+.half-star::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: gold;
+}
+
+
+.rating-number {
+    color: #CCC;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    padding-left: 5px;
+    margin-top: 2px;
+}

@@ -1,0 +1,153 @@
+.movie-wrapper {
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.overlay {
+    position: fixed;
+    overflow: hidden;
+    top: 94px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+}
+
+.backdrop-container {
+    position: absolute;
+    width: 100%;
+    height: -webkit-fill-available;
+    overflow: hidden;
+}
+
+img.backdrop-image {
+
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    height: -webkit-fill-available;
+    height: 100%;
+    object-position: center;
+
+}
+
+.content {
+    position: absolute;
+    z-index: 10;
+    left: 10%;
+    top: 25%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.movie-details-container {
+    width: 100%;
+    height: fit-content;
+}
+
+
+
+.movie-title {
+    font-size: 3rem;
+    font-weight: bold;
+    /* margin-bottom: 15px; */
+}
+
+.movie-rating {
+    font-size: 1.2rem;
+    /* margin-bottom: 10px; */
+}
+
+.movie-overview {
+    font-size: 1rem;
+    line-height: 1.5;
+    /* margin-bottom: 20px; */
+}
+
+.movie-meta p {
+    margin: 5px 0;
+}
+
+
+.back-button {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    z-index: 10;
+    color: #fff;
+    cursor: pointer;
+}
+
+.back-button>img {
+    width: 52px;
+    height: 62px;
+}
+
+.movie-details-wrapper {
+    width: 80%;
+}
+
+.play-button img {
+    width: 115px;
+    height: 115px;
+    cursor: pointer;
+    position: absolute;
+    top: 28%;
+}
+
+@media screen and (min-width:551px) {
+    .content {
+        max-width: 58%;
+
+    }
+}
+
+
+
+@media screen and (max-width:550px) {
+    .play-button {
+        /* visibility: hidden; */
+        display: none;
+    }
+
+    img.backdrop-image {
+        position: static;
+    }
+
+    .backdrop-container,
+    .content {
+        position: relative;
+    }
+
+    .overlay {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(0 0 0 / 14%);
+    }
+
+    .back-button {
+        top: 15%;
+        left: 3%;
+    }
+
+    .movie-details-container {
+        background: #0c111b;
+    }
+
+    .content {
+        display: block;
+        left: 0;
+        top: 0;
+        padding: 20px;
+    }
+
+    .movie-details-wrapper {
+        width: 100%;
+    }
+
+}
