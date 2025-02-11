@@ -122,19 +122,12 @@
         max-width: 350px;
 
     }
-
-    /* .login-button {
-        font-size: 14px;
-        max-width: 550px;
-
-    } */
 }
 
 @media screen and (max-width: 410px) {
     .signin-box {
         width: 100%;
         max-width: 380px;
-        /* Slightly smaller box for small screens */
         padding: 24px;
     }
 
@@ -148,8 +141,6 @@
 
     .input-field {
         width: 100%;
-        /* padding: 12px; */
-        /* padding-right: 80px; */
         font-size: 14px;
     }
 
@@ -157,75 +148,5 @@
     .login-button {
         width: 110%;
         font-size: 14px;
-        /* padding: 8px; */
-        /* max-width: 25440px; */
-
     }
 }
-
-/* @media screen and (max-width: 450px) {
-    .signin-box {
-        width: 100%;
-        max-width: 380px; 
-        padding: 24px; 
-    }
-
-    .title {
-        font-size: 24px;
-    }
-
-    .input-field {
-        width: 100%;
-        padding: 12px;
-        font-size: 14px;
-        max-width: 230px;
-    }
-
-    .input-group{
-        max-width: 100px;
-    }
-    .login-button {
-        width: 100%;
-        font-size: 14px;
-        padding: 8px;
-        max-width: 220px;
-
-    }
-} */
-
-
-/* .floating-label {
-    position: relative;
-    width: 100%;
-}
-
-
-.floating-label label {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 14px;
-    color: #aaa;
-    transition: all 0.3s ease;
-    background: white;
-    padding: 0 5px;
-} */
-
-/* .input-field:focus+label {
-    top: 0;
-    font-size: 12px;
-    color: #ff6b6b;
-}
-
-.input-field:valid+label {
-    opacity: 0;
-    visibility: hidden;
-} */
-
-
-/* .input-field:focus+label {
-    top: 5px;
-    font-size: 12px;
-    color: #ff6b6b;
-} */

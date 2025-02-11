@@ -201,22 +201,6 @@
         position: relative;
     }
 
-    /* .movie-title {
-        font-size: 24px;
-    }
-
-    .movie-overview {
-        font-size: 16px;
-    }
-    
-    .movie-meta p {
-        font-size: 14px;
-    }
-
-    .movie-rating{
-        font-size: 16px;
-    } */
-
     .overlay {
         top: 0;
         left: 0;
@@ -247,10 +231,6 @@
 
 }
 
-
-
-
-/* Modal for Trailer */
 .trailer-modal {
     position: fixed;
     top: 0;

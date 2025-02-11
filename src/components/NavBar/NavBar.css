@@ -48,7 +48,6 @@
 }
 
 .search-btn {
-    /* margin-top: 3px; */
     background: none;
     border: none;
     cursor: pointer;
@@ -63,10 +62,6 @@
     line-height: 24px;
 }
 
-/* .input-search:focus {
-    border-color: #FF9966;
-    border-right-color: transparent;
-} */
 
 .logout-btn {
     background-color: #263F61;
@@ -88,7 +83,6 @@
     }
 }
 
-/* 🔹 Ensure Search Bar Stays Left-Aligned on Wrap */
 @media screen and (max-width: 558px) {
     .nav-container {
         padding: 20px;
@@ -103,12 +97,11 @@
         flex-grow: 1;
         min-width: 250px;
         width: 100%;
-        /* padding-left: 30px; */
         justify-content: flex-start; 
     }
 
     .input-search {
-        max-width: 450px; /* Reduce width */
+        max-width: 450px; 
     }
 }
 

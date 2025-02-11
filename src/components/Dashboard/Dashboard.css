@@ -38,10 +38,7 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    /* flex-grow: 3; */
     width: 70%;
-    /* flex-basis: 95%; */
-    /* width: 80%; */
 }
 
 .movie-info h3 {
@@ -91,12 +88,9 @@
     object-position: center;
 }
 
-/* Movie Card */
 .movie-card {
     flex: 1 1 calc(25% - 20px);
-    /* 4 cards per row with spacing */
     max-width: calc(25% - 20px);
-    /* Ensures only 4 per row */
     width: 299.499px;
     height: 15rem;
     overflow: hidden;
@@ -106,7 +100,6 @@
 @media screen and (max-width: 1024px) {
     .movie-card {
         flex: 1 1 calc(33.33% - 20px);
-        /* 3 cards per row */
         max-width: calc(33.33% - 20px);
     }
 }
@@ -114,7 +107,6 @@
 @media screen and (max-width: 768px) {
     .movie-card {
         flex: 1 1 calc(50% - 20px);
-        /* 2 cards per row */
         max-width: calc(50% - 20px);
     }
 }
@@ -122,12 +114,10 @@
 @media screen and (max-width: 540px) {
     .movie-card {
         flex: 1 1 100%;
-        /* 1 card per row */
         max-width: 100%;
     }
 }
 
-/* Movie Image - Takes Full Card Space */
 
 .movie-details {
     position: absolute;
@@ -196,7 +186,6 @@
     align-items: center;
     height: 100%;
     min-height: 300px;
-    /* Prevents collapsing */
 }
 
 .loader {
@@ -301,7 +290,6 @@
     opacity: 0.6;
 }
 
-/* Responsive Pagination */
 @media screen and (max-width: 768px) {
     .pagination {
         justify-content: center;
