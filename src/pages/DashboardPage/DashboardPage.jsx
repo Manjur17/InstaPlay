@@ -1,6 +1,5 @@
 import Dashboard from "../../components/Dashboard/Dashboard";
 import NavBar from "../../components/NavBar/NavBar";
-import "./DashboardPage.css";
 
 const DashboardPage = () => {
     
