@@ -78,8 +78,8 @@
 
 .movie-meta {
     display: flex;
-    flex-direction: column; 
-    gap: 10px; 
+    flex-direction: column;
+    gap: 10px;
     margin-top: 15px;
 }
 
@@ -165,7 +165,7 @@
 
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) {
     .movie-title {
         font-size: 24px;
     }
@@ -173,12 +173,12 @@
     .movie-overview {
         font-size: 16px;
     }
-    
+
     .movie-meta p {
         font-size: 14px;
     }
 
-    .movie-rating{
+    .movie-rating {
         font-size: 16px;
     }
 }
@@ -231,6 +231,7 @@
 
 }
 
+
 .trailer-modal {
     position: fixed;
     top: 0;
@@ -255,5 +256,17 @@
     font-size: 30px;
     color: white;
     cursor: pointer;
+
+}
+
+@media screen and (max-width:850px) {
+    .close-button {
+        position: absolute;
+        top: -30px;
+        right: 30px;
+        color: white;
+        cursor: pointer;
+
+    }
 
 }
