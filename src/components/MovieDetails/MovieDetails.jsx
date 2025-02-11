@@ -66,7 +66,7 @@ const MovieDetails = ({ id }) => {
                     </div>
                     <div className="back-button" onClick={() => navigate("/dashboard")}>
                         <img src={backIcon} alt="Back" />
-                    </div>vote_average
+                    </div>
                     <div className="content">
                         <div className="movie-details-wrapper">
                             <h1 className="movie-title">{details.title}</h1>
