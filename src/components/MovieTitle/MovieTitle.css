@@ -1,35 +1,39 @@
 .tooltip {
     position: relative;
     display: inline-block;
-    max-width: 95%;
+    /* max-width: 95%; */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.tooltip:hover {
-    overflow: visible;
-}
 
 .tooltip-text {
     visibility: hidden;
     position: absolute;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.9);
     color: #FFF;
     font-family: Poppins;
     text-align: center;
     padding: 5px 10px;
     border-radius: 5px;
-    bottom: 120%;
-    left: 53%;
+    bottom: 150%;
+    left: 59%;
     transform: translateX(-50%);
-    white-space: nowrap;
+    white-space: normal;
     z-index: 10;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
 
-.tooltip:hover .tooltip-text {
+.tooltip:hover .tooltip-text,
+.tooltip .tooltip-text.visible {
     visibility: visible;
     opacity: 1;
 }
+
+
+
+
+
