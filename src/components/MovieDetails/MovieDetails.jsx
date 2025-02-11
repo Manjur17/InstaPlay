@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import { fetchMovieDetails } from "../../apis/fetchMovieDetails";
 import { fetchMovieTrailer } from "../../apis/fetchMovieTrailer";
 import close from "../../assets/close.svg";
+import { getLanguageName } from "../../utils/getLanguageName";
 
 const MovieDetails = ({ id }) => {
     const [details, setDetails] = useState(null);
@@ -71,9 +72,14 @@ const MovieDetails = ({ id }) => {
                             <h1 className="movie-title">{details.title}</h1>
                             <p className="movie-rating">Rating {ratingOutOf5}/5</p>
                             <p className="movie-overview">{details.overview}</p>
+
                             <div className="movie-meta">
-                                <p>Release Date    {details.release_date}</p>
-                                <p>Original Language    {details.original_language.toUpperCase()}</p>
+                                <p>
+                                    <span>Release Date</span> {details.release_date.split("-")[0]}
+                                </p>
+                                <p>
+                                    <span>Original Language</span> {getLanguageName(details.original_language)}
+                                </p>
                             </div>
 
                         </div>
@@ -89,7 +95,7 @@ const MovieDetails = ({ id }) => {
             {showTrailer && trailerKey && (
                 <div className="trailer-modal">
                     <div className="modal-content">
-                        <img className="close-button" src={close} alt="close" onClick={() => setShowTrailer(false)}/>
+                        <img className="close-button" src={close} alt="close" onClick={() => setShowTrailer(false)} />
                         <iframe
                             width="800"
                             height="450"

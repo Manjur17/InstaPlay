@@ -15,7 +15,7 @@ const NavBar = ({ displaySearchBar }) => {
 
     return (
         <nav className="nav-container">
-            <img className="logo" src={logo} alt="InstaPlay" onClick={() => navigate("/")}/>
+            <img className="logo" src={logo} alt="InstaPlay" onClick={() => navigate("/")} />
 
             {displaySearchBar && (
                 <div className="search-container">
