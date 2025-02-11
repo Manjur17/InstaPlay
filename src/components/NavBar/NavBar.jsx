@@ -13,9 +13,14 @@ const NavBar = ({ displaySearchBar }) => {
     const { logout } = useAuth();
     const { query, setSerachText } = useSearch();
 
+    const handleNavigate = () => {
+        sessionStorage.removeItem("lastPage");
+        navigate("/");
+    }
+
     return (
         <nav className="nav-container">
-            <img className="logo" src={logo} alt="InstaPlay" onClick={() => navigate("/")} />
+            <img className="logo" src={logo} alt="InstaPlay" onClick={handleNavigate} />
 
             {displaySearchBar && (
                 <div className="search-container">
