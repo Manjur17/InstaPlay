@@ -126,5 +126,9 @@
     .nav-container{
         padding-left: 18px;
         padding-right: 18px;
-    }    
+    }  
+    
+    .logo{
+        padding-left: 0;
+    }
 }
