@@ -23,19 +23,41 @@ const NavBar = ({ displaySearchBar }) => {
             <img className="logo" src={logo} alt="InstaPlay" onClick={handleNavigate} />
 
             {displaySearchBar && (
-                <div className="search-container">
-                    <input
-                        className="input-search"
-                        type="text"
-                        placeholder="Search movies"
-                        value={query}
-                        onChange={(e) => setSerachText(e.target.value)}
-                    />
-                    <img className="search-btn" src={searchIcon} alt="Search" />
-                </div>
+                <>
+                    <div className="search-container">
+                        <input
+                            className="input-search"
+                            type="text"
+                            placeholder="Search movies"
+                            value={query}
+                            onChange={(e) => setSerachText(e.target.value)}
+                        />
+                        <img className="search-btn" src={searchIcon} alt="Search" />
+
+
+                        <button className="logout-btn"
+                            onClick={() => {
+                                logout();
+                                toast.success("Logout successful!", { autoClose: 2000 });
+                                setSerachText("");
+                                navigate("/");
+                            }}
+                        >Logout</button>
+                    </div>
+
+                    
+                    {/* <button className="logout-btn"
+                        onClick={() => {
+                            logout();
+                            toast.success("Logout successful!", { autoClose: 2000 });
+                            setSerachText("");
+                            navigate("/");
+                        }}
+                    >Logout</button> */}
+                </>
             )}
 
-            {displaySearchBar && <button className="logout-btn"
+            {/* {displaySearchBar && <button className="logout-btn"
                 onClick={() => {
                     logout();
                     toast.success("Logout successful!", { autoClose: 2000 });
@@ -43,7 +65,7 @@ const NavBar = ({ displaySearchBar }) => {
                     navigate("/");
                 }}
             >Logout</button>
-            }
+            } */}
         </nav>
     );
 };
