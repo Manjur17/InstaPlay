@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./NavBar.css";
 import logo from "../../assets/websiteLogo.svg";
 import searchIcon from "../../assets/Group47.png";
@@ -8,7 +8,6 @@ import { useSearch } from "../../context/SearchContext";
 import { toast } from "react-toastify";
 
 const NavBar = ({ displaySearchBar }) => {
-
     const navigate = useNavigate();
     const { logout } = useAuth();
     const { query, setSerachText } = useSearch();
@@ -16,14 +15,14 @@ const NavBar = ({ displaySearchBar }) => {
     const handleNavigate = () => {
         sessionStorage.removeItem("lastPage");
         navigate("/");
-    }
+    };
 
     return (
         <nav className="nav-container">
             <img className="logo" src={logo} alt="InstaPlay" onClick={handleNavigate} />
 
             {displaySearchBar && (
-                <>
+                <div className="search-wrapper">
                     <div className="search-container">
                         <input
                             className="input-search"
@@ -33,39 +32,18 @@ const NavBar = ({ displaySearchBar }) => {
                             onChange={(e) => setSerachText(e.target.value)}
                         />
                         <img className="search-btn" src={searchIcon} alt="Search" />
-
-
-                        <button className="logout-btn"
-                            onClick={() => {
-                                logout();
-                                toast.success("Logout successful!", { autoClose: 2000 });
-                                setSerachText("");
-                                navigate("/");
-                            }}
-                        >Logout</button>
                     </div>
 
-                    
-                    {/* <button className="logout-btn"
+                    <button className="logout-btn"
                         onClick={() => {
                             logout();
                             toast.success("Logout successful!", { autoClose: 2000 });
                             setSerachText("");
                             navigate("/");
                         }}
-                    >Logout</button> */}
-                </>
+                    >Logout</button>
+                </div>
             )}
-
-            {/* {displaySearchBar && <button className="logout-btn"
-                onClick={() => {
-                    logout();
-                    toast.success("Logout successful!", { autoClose: 2000 });
-                    setSerachText("");
-                    navigate("/");
-                }}
-            >Logout</button>
-            } */}
         </nav>
     );
 };

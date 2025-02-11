@@ -1,9 +1,10 @@
 .nav-container {
     display: flex;
-    flex-wrap: nowrap; 
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     background-color: #263F61;
+    padding: 12px 20px;
+    gap: 10px;
     height: auto;
     padding-bottom: 12px;
     padding-top: 10px;
@@ -19,6 +20,15 @@
     padding-bottom: 10px;
     padding-top: 18px;
     cursor: pointer;
+}
+
+.search-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 10px;
+    padding-right: 50px;
 }
 
 .search-container {
@@ -47,12 +57,6 @@
     border-bottom-right-radius: 0;
 }
 
-.search-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
 .input-search::placeholder {
     color: #FFF;
     text-align: left;
@@ -62,60 +66,59 @@
     line-height: 24px;
 }
 
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-btn img {
+    width: 20px;
+    height: 20px;
+}
+
 .logout-btn {
-    background-color: #263F61;
+    background: none;
     color: #FFF;
-    text-align: center;
+    text-align: left;
+    padding: 8px 0;
     font-family: Poppins;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     border: none;
     cursor: pointer;
-    padding-bottom: 8px;
-    padding-right: 43px;
-    padding-left: 40px;
-    flex-shrink: 0; 
-    margin-left: auto; 
+}
+
+@media screen and (min-width: 768px) {
+    .nav-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .search-wrapper {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .logout-btn {
+        margin-left: 20px;
+        padding: 0;
+    }
 }
 
 @media screen and (max-width: 800px) {
-    .logout-btn {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-    }
-
-    .search-container {
-        width: 100%;
-        max-width: 550px;
-        justify-content: flex-start;
-    }
-
-    .input-search {
-        width: 100%;
-        max-width: 450px;
-    }
+    .nav-container{
+        padding-left: 18px;
+        /* padding-right: 18px; */
+    } 
 }
 
 @media screen and (max-width: 480px) {
-    .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .search-container {
-        width: 100%;
-        max-width: 450px;
-    }
-
-    .input-search {
-        width: 100%;
-    }
+    .nav-container{
+        padding-left: 18px;
+        padding-right: 18px;
+    }    
 }
