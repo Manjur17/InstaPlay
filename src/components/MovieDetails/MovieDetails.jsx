@@ -24,8 +24,6 @@ const MovieDetails = ({ id }) => {
     const loadMovieDetails = async () => {
         try {
             const data = await fetchMovieDetails(id);
-            console.log("data ", data);
-
             setDetails(data);
         } catch (error) {
             toast.error(error.message);
