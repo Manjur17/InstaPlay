@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import { fetchMovieDetails } from "../../apis/fetchMovieDetails";
 import { fetchMovieTrailer } from "../../apis/fetchMovieTrailer";
 import close from "../../assets/close.svg";
+import black from "../../assets/black.jpeg";
 
 const MovieDetails = ({ id }) => {
     const [details, setDetails] = useState(null);
@@ -64,11 +65,17 @@ const MovieDetails = ({ id }) => {
                     <div className="backdrop-container">
                         <img
                             className="backdrop-image"
-                            src={`https://image.tmdb.org/t/p/original${details.backdrop_path}`}
-                            alt={details.title}
+                            src={details.backdrop_path
+                                ? `https://image.tmdb.org/t/p/original${details.backdrop_path}`
+                                : black
+                            }
+                            alt={details.title || "black"}
                         />
+
                         <div className="overlay"></div>
                     </div>
+
+
                     <div className="back-button" onClick={() => navigate("/dashboard")}>
                         <img src={backIcon} alt="Back" />
                     </div>
