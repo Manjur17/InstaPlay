@@ -6,7 +6,7 @@
     padding: 98px;
 }
 
-.loginContainer {
+.login-container {
     max-width: 550px;
     width: 100%;
     display: flex;
@@ -14,7 +14,7 @@
     align-items: center;
 }
 
-.loginForm {
+.login-form {
     display: flex;
     flex-direction: column;
     max-width: 552px;
@@ -25,7 +25,7 @@
     padding: 32px 32px 45px;
 }
 
-.loginForm h1 {
+.login-form h1 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #263238;
     font-size: 30px;
@@ -33,7 +33,7 @@
     line-height: 36px;
 }
 
-.loginForm p {
+.login-form p {
     color: #546E7A;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -44,7 +44,7 @@
     padding-bottom: 10px;
 }
 
-.loginForm form {
+.login-form form {
     display: flex;
     position: relative;
     flex-direction: column;
@@ -52,15 +52,15 @@
 
 }
 
-.loginForm input {
+.login-form input {
     height: 42px;
     border-radius: 16px;
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.31);
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.loginForm input[type="text"],
-.loginForm input[type="password"] {
+.login-form input[type="text"],
+.login-form input[type="password"] {
     width: 96%;
     padding-left: 14px;
     height: 50px;
@@ -73,16 +73,16 @@
 }
 
 
-.loginForm input[type="submit"]:hover {
+.login-form input[type="submit"]:hover {
     background-color: #ff4f4f;
 }
 
-.loginForm input:focus {
+.login-form input:focus {
     border-color: #ff6b6b;
     outline: none;
 }
 
-.loginForm input::placeholder {
+.login-form input::placeholder {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: grey;
     font-size: 14px;
@@ -91,14 +91,14 @@
     text-align: left;
 }
 
-.userInput,
-.passwordInput {
+.user-input,
+.password-input {
     position: relative;
     width: 100%;
 }
 
-.userInput .error,
-.passwordInput .error {
+.user-input .error,
+.password-input .error {
     position: absolute;
     font-size: 12px;
     font-weight: 500;
@@ -143,44 +143,43 @@
         height: calc(100vh - 310px);
     }
 
-    .loginContainer {
+    .login-container {
         align-items: center;
         height: 100%;
     }
 
-    .loginForm {
+    .login-form {
         padding: 24px;
     }
 }
 
-/* Mobile (550px and below) */
 @media only screen and (max-width: 550px) {
     .login {
         padding: 20px;
         height: calc(100vh - 210px);
     }
 
-    .loginContainer {
+    .login-container {
         align-items: center;
         height: 100%;
     }
 
-    .loginForm {
+    .login-form {
         width: 100%;
         max-width: 90%;
         padding: 20px;
     }
 
-    .loginForm h1 {
+    .login-form h1 {
         font-size: 24px;
     }
 
-    .loginForm input {
+    .login-form input {
         padding-left: 10px;
         font-size: 14px;
     }
 
-    .loginForm input[type="submit"] {
+    .login-form input[type="submit"] {
         font-size: 14px;
     }
 

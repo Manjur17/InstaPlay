@@ -49,13 +49,13 @@ const LoginForm = () => {
 
     return (
         <div className="login">
-            <div className="loginContainer">
-                <div className="loginForm">
+            <div className="login-container">
+                <div className="login-form">
                     <h1>Sign in</h1>
                     <p>Sign in to your Self Service Portal</p>
 
                     <form onSubmit={handleSubmit} noValidate>
-                        <div className="userInput">
+                        <div className="user-input">
                             <input
                                 id="username"
                                 type="text"
@@ -67,7 +67,7 @@ const LoginForm = () => {
                             {errors.name && <p className="error">{errors.name}</p>}
                         </div>
 
-                        <div className="passwordInput">
+                        <div className="password-input">
                             <input
                                 id="password"
                                 type="password"
@@ -84,47 +84,6 @@ const LoginForm = () => {
                         </button>
                     </form>
                 </div>
-            </div>
-        </div>
-    );
-
-    return (
-        <div className="container">
-            <div className="signin-box">
-                <h2 className="title">Sign in</h2>
-                <p className="subtitle">Sign in to your Self Service Portal</p>
-
-                <form onSubmit={handleSubmit}>
-                    <div className="input-group">
-                        <input
-                            id="username"
-                            type="text"
-                            placeholder="username"
-                            className="input-field"
-                            value={formData.name}
-                            onChange={(e) => handleValidation(e.target.value, "name")}
-                        />
-                        {errors.name && <p className="error-message">{errors.name}</p>}
-                    </div>
-
-                    <div className="input-group">
-                        <input
-                            id="password"
-                            type="password"
-                            className="input-field"
-                            placeholder="Password"
-                            value={formData.password}
-                            onChange={(e) => handleValidation(e.target.value, "password")}
-                        />
-                        {errors.password && <p className="error-message">{errors.password}</p>}
-                    </div>
-
-                    <div className="input-group">
-                        <button className="login-button" type="submit" disabled={isButtonDisabled}>
-                            LOG IN
-                        </button>
-                    </div>
-                </form>
             </div>
         </div>
     );
