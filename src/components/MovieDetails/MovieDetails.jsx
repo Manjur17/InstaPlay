@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 import { fetchMovieDetails } from "../../apis/fetchMovieDetails";
 import { fetchMovieTrailer } from "../../apis/fetchMovieTrailer";
 import close from "../../assets/close.svg";
-import { getLanguageName } from "../../utils/getLanguageName";
 
 const MovieDetails = ({ id }) => {
     const [details, setDetails] = useState(null);
@@ -25,11 +24,19 @@ const MovieDetails = ({ id }) => {
     const loadMovieDetails = async () => {
         try {
             const data = await fetchMovieDetails(id);
+            console.log("data ", data);
+
             setDetails(data);
         } catch (error) {
             toast.error(error.message);
             navigate("/dashboard");
         }
+    };
+
+    // Extract spoken languages
+    const getSpokenLanguages = (languages) => {
+        if (!languages || languages.length === 0) return "Unknown"; // Fallback
+        return languages.map(lang => lang.english_name).join(", ");
     };
 
     const handlePlayClick = async () => {
@@ -74,12 +81,15 @@ const MovieDetails = ({ id }) => {
                             <p className="movie-overview">{details.overview}</p>
 
                             <div className="movie-meta">
-                                <p>
-                                    <span>Release Date</span> {details.release_date.split("-")[0]}
-                                </p>
-                                <p>
-                                    <span>Original Language</span> {getLanguageName(details.original_language)}
-                                </p>
+                                <div className="release-date">
+                                    <span>Release Date</span>
+                                    <span>Original Language</span>
+
+                                </div>
+                                <div className="release-date">
+                                    <span>{details.release_date.split("-")[0]}</span>
+                                    <span>{getSpokenLanguages(details.spoken_languages)}</span>
+                                </div>
                             </div>
 
                         </div>
