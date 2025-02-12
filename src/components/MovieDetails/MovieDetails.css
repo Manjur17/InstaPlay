@@ -176,7 +176,7 @@
         font-size: 24px;
     }
 
-    .movie-overview {
+    .movie-overview , .movie-meta span{
         font-size: 16px;
     }
 

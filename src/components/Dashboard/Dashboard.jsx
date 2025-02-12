@@ -110,7 +110,7 @@ const Dashboard = () => {
                 )}
             </section>
 
-            {totalPages > 1 && (
+            {totalPages >= 1 && (
                 <div className="pagination-div">
                     <ReactPaginate
                         previousLabel={"<"}

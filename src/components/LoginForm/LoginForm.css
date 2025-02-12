@@ -1,8 +1,8 @@
 .login {
-    height: calc(100vh - 619px);
+    /* height: calc(100vh - 619px); */
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     padding: 98px;
 }
 
