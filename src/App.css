@@ -1,0 +1,26 @@
+/* Default Toast Container Styles */
+.custom-toast-container {
+    width: auto;
+    max-width: 450px;
+}
+
+/* Tablet screens */
+@media screen and (max-width: 768px) {
+    .custom-toast-container {
+        /* max-width: 90%; */
+        padding: 20px;
+        padding-left: 40px;
+    }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 480px) {
+    .custom-toast-container {
+        max-width: 95%;
+        font-size: 14px;
+        padding: 20px;
+
+        padding-left: 80px;
+
+    }
+}

@@ -10,7 +10,7 @@ function App() {
   return (
     <AuthProvider>
       <SearchContextProvider>
-        <ToastContainer position="top-center" autoClose={3000} />
+        <ToastContainer position="top-center" autoClose={3000} className="custom-toast-container" />
         <MainRoutes />
       </SearchContextProvider>
     </AuthProvider>
