@@ -33,7 +33,7 @@
 .content {
     position: absolute;
     z-index: 10;
-    left: 10%;
+    left: 57px;
     top: 25%;
     color: #fff;
     display: flex;
@@ -108,7 +108,7 @@
 .back-button {
     position: absolute;
     top: 15%;
-    left: 10%;
+    left: 50px;
     z-index: 10;
     color: #fff;
     cursor: pointer;
@@ -187,6 +187,14 @@
     .movie-rating {
         font-size: 16px;
     }
+
+    .content{
+        /* padding: 9%; */
+    }
+
+    .movie-title{
+
+    }
 }
 
 @media screen and (max-width:550px) {
@@ -235,6 +243,15 @@
         width: 100%;
     }
 
+    .content{
+        left: 22px;
+    }
+
+    .back-button{
+        /* left: 9%; */
+        left: 32px;
+
+    }
 }
 
 
