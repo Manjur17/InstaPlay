@@ -48,6 +48,47 @@ const LoginForm = () => {
     const isButtonDisabled = isSubmitting || !formData.name || !formData.password || errors.name || errors.password;
 
     return (
+        <div className="login">
+            <div className="loginContainer">
+                <div className="loginForm">
+                    <h1>Sign in</h1>
+                    <p>Sign in to your Self Service Portal</p>
+
+                    <form onSubmit={handleSubmit} noValidate>
+                        <div className="userInput">
+                            <input
+                                id="username"
+                                type="text"
+                                placeholder="username"
+                                className="input-field"
+                                value={formData.name}
+                                onChange={(e) => handleValidation(e.target.value, "name")}
+                            />
+                            {errors.name && <p className="error">{errors.name}</p>}
+                        </div>
+
+                        <div className="passwordInput">
+                            <input
+                                id="password"
+                                type="password"
+                                className="input-field"
+                                placeholder="password"
+                                value={formData.password}
+                                onChange={(e) => handleValidation(e.target.value, "password")}
+                            />
+                            {errors.password && <p className="error">{errors.password}</p>}
+                        </div>
+
+                        <button className="login-button" type="submit" disabled={isButtonDisabled}>
+                            LOG IN
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    );
+
+    return (
         <div className="container">
             <div className="signin-box">
                 <h2 className="title">Sign in</h2>
